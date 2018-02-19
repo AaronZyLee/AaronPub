@@ -3,6 +3,8 @@ var mongoose = require("mongoose");
 var campgroundSchema = new mongoose.Schema({
    name: String,
    image: String,
+   cost: Number,
+   createdAt: {type: Date, default: Date.now},
    description: String,
    author:{
    		id:{
