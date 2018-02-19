@@ -1,5 +1,5 @@
 <% include partials/header %>
-<div class="container">
+
 	<h1 style="text-align: center">Edit <%= campground.name %></h1>
 	<div style="width:30%; margin: 25px auto;">
 		<form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
@@ -18,5 +18,5 @@
 			<a href="/campgrounds">Go back</a>			
 		</form>
 	</div>	
-</div>
+
 <% include partials/footer %>
