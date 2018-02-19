@@ -17,7 +17,9 @@ var commentRoutes = require("./routes/comments"),
 	indexRoutes = require("./routes/index");
 
 //seedDB();
-mongoose.connect("mongodb://localhost/cocktail_menu");
+var DB_url = process.env.DATABASEURL || "mongodb://localhost/cocktail_menu";
+mongoose.connect(DB_url);
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
@@ -49,6 +51,6 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 
 
 
-app.listen(8080, function(){
-	console.log("sever has been started!")
+app.listen(process.env.PORT || 8080, process.env.IP, function(){
+	console.log("sever has been started!");
 });
